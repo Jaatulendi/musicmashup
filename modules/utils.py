@@ -4,7 +4,7 @@ import os
 from pyrogram.errors import FloodWait
 
 class Timer:
-    def __init__(self, time_between=5):
+    def __init__(self, time_between=2):
         self.start_time = time.time()
         self.time_between = time_between
 
@@ -89,10 +89,10 @@ async def progress_bar(current, total, reply, start):
             bar_length = 11
             completed_length = int(current * bar_length / total)
             remaining_length = bar_length - completed_length
-            progress_bar = "▓" * completed_length + "▒" * remaining_length
+            progress_bar = "◉" * completed_length + "○" * remaining_length
             
             try:
-                await reply.edit(f'`\n ╭──⌯════Bot Statics═════⌯──╮ \n├⚡ {progress_bar}|﹝{perc}﹞ \n├🚀 Speed » {sp} \n├📟 Processed » {cur}\n├🧲 Size - ETA » {tot} - {eta} \n╰─═══ ✪ Powered By AIR PHEONIX ✪ ═══─╯`\n') 
+                await reply.edit(f'`\n ╭──⌯════Bot Statics═════⌯──╮ \n├⚡ {progress_bar}|﹝{perc}﹞ \n├🚀 Speed » {sp} \n├📟 Processed » {cur}\n├🧲 Size - ETA » {tot} - {eta} \n╰─═══✪🌹🌹🌹✪═══─╯`\n') 
             except FloodWait as e:
                 time.sleep(e.x)
 
